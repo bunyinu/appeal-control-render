@@ -10,6 +10,14 @@ module.exports = {
     const createdAt = new Date();
     const updatedAt = new Date();
 
+    const [existingRoles] = await queryInterface.sequelize.query(
+      `SELECT id FROM "roles" WHERE name = 'Super Administrator' LIMIT 1;`,
+    );
+
+    if (existingRoles.length) {
+      return;
+    }
+
     /** @type {Map<string, string>} */
     const idMap = new Map();
 
