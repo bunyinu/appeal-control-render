@@ -4,9 +4,10 @@
   "scripts": {
     "dev": "ENABLE_DEMO_SEEDING=true npm run db:migrate && ENABLE_DEMO_SEEDING=true npm run db:seed && ENABLE_DEMO_SEEDING=true npm run watch",
     "start": "node ./src/index.js",
-    "start:render": "node ./scripts/assert-production-readiness.js && npm run db:migrate && npm run db:seed:core && node ./src/index.js",
+    "start:render": "node ./scripts/assert-production-readiness.js && npm run db:migrate && npm run db:seed:core && npm run bootstrap:admin:optional && node ./src/index.js",
     "validate:prod": "node ./scripts/assert-production-readiness.js",
     "bootstrap:admin": "node ./scripts/bootstrap-admin.js",
+    "bootstrap:admin:optional": "node ./scripts/bootstrap-admin-optional.js",
     "normalize:generated": "node ./scripts/normalize-generated-backend.js",
     "lint": "npm run normalize:generated && eslint . --ext .js",
     "lint:fix": "npm run normalize:generated && eslint . --ext .js --fix",
