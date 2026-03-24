@@ -6,7 +6,7 @@ import type { ReactElement } from 'react';
 import LayoutAuthenticated from '../layouts/Authenticated';
 import SectionMain from '../components/SectionMain';
 import SectionTitleLineWithButton from '../components/SectionTitleLineWithButton';
-import { getPageTitle } from '../config';
+import { aiWidgetsEnabled, getPageTitle } from '../config';
 import { hasPermission } from '../helpers/userPermissions';
 import { fetchWidgets } from '../stores/roles/rolesSlice';
 import { WidgetCreator } from '../components/WidgetCreator/WidgetCreator';
@@ -68,7 +68,7 @@ const Dashboard = () => {
   const { isFetchingQuery } = useAppSelector((state) => state.openAi);
   const { rolesWidgets, loading } = useAppSelector((state) => state.roles);
 
-  const canManageWidgets = hasPermission(currentUser, 'CREATE_ROLES');
+  const canManageWidgets = aiWidgetsEnabled && hasPermission(currentUser, 'CREATE_ROLES');
 
   React.useEffect(() => {
     if (!currentUser) return;
@@ -109,9 +109,9 @@ const Dashboard = () => {
   }, [currentUser]);
 
   React.useEffect(() => {
-    if (!currentUser || !widgetsRole.role.value) return;
+    if (!canManageWidgets || !currentUser || !widgetsRole.role.value) return;
     dispatch(fetchWidgets(widgetsRole.role.value));
-  }, [dispatch, currentUser, widgetsRole.role.value]);
+  }, [canManageWidgets, dispatch, currentUser, widgetsRole.role.value]);
 
   const operationsItems = [
     hasPermission(currentUser, 'READ_CASES') && {

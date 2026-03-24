@@ -198,7 +198,11 @@ export default function Login() {
                     label='Login'
                     help='Please enter your login'
                   >
-                    <Field name='email' />
+                    <Field
+                      name='email'
+                      type='email'
+                      autoComplete='username'
+                    />
                   </FormField>
 
                   <div className='relative'>
@@ -206,7 +210,11 @@ export default function Login() {
                       label='Password'
                       help='Please enter your password'
                     >
-                      <Field name='password' type={showPassword ? 'text' : 'password'} />
+                      <Field
+                        name='password'
+                        type={showPassword ? 'text' : 'password'}
+                        autoComplete='current-password'
+                      />
                     </FormField>
                     <div
                       className='absolute bottom-8 right-0 pr-3 flex items-center cursor-pointer'

@@ -84,6 +84,8 @@ services:
           property: hostport
       - key: NEXT_PUBLIC_ENABLE_DEMO_ACCOUNTS
         value: "false"
+      - key: NEXT_PUBLIC_ENABLE_AI_PROXY
+        value: "false"
       - key: NEXT_PUBLIC_SHOW_API_DOCS
         value: "true"
       - key: NEXT_PUBLIC_APP_URL

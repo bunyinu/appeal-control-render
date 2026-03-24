@@ -9,6 +9,12 @@ i18n
     .use(initReactI18next)
     .init({
         fallbackLng: 'en',
+        supportedLngs: ['de', 'en', 'es', 'fr'],
+        load: 'languageOnly',
+        ns: ['common'],
+        defaultNS: 'common',
+        debug: false,
+        showSupportNotice: false,
         detection: {
             order: ['localStorage', 'navigator'],
             lookupLocalStorage: 'app_lang_',

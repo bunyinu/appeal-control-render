@@ -3,6 +3,7 @@ const defaultDevApiUrl = 'http://localhost:9000/api'
 export const baseURLApi = process.env.NEXT_PUBLIC_BACK_API
   || (process.env.NODE_ENV === 'development' ? defaultDevApiUrl : '/api')
 export const swaggerDocsURL = (process.env.NEXT_PUBLIC_BACK_API || baseURLApi).replace(/\/api\/?$/, '/api-docs/')
+export const aiWidgetsEnabled = process.env.NEXT_PUBLIC_ENABLE_AI_PROXY === 'true'
 
 export const localStorageDarkModeKey = 'darkMode'
 

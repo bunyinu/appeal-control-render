@@ -139,11 +139,27 @@ export const removeWidget = createAsyncThunk(
 
 export const fetchWidgets = createAsyncThunk(
   'openai/fetchWidgets',
-  async (roleId: any) => {
-      const result = await axios.get(
-        `openai/info-by-key?key=widgets&roleId=${roleId}`,
-      );
-      return result.data;
+  async (roleId: any, { rejectWithValue }) => {
+      if (!roleId) {
+          return [];
+      }
+
+      try {
+          const result = await axios.get(
+            `openai/info-by-key?key=widgets&roleId=${roleId}`,
+          );
+          return result.data;
+      } catch (error) {
+          if (error?.response?.status === 403 || error?.response?.status === 404) {
+              return [];
+          }
+
+          if (!error.response) {
+              throw error;
+          }
+
+          return rejectWithValue(error.response.data);
+      }
   },
 );
 
