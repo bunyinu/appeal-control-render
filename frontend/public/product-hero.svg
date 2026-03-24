@@ -1,0 +1,27 @@
+<svg width="1200" height="1600" viewBox="0 0 1200 1600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="1600" fill="#0F172A"/>
+  <circle cx="990" cy="250" r="280" fill="#0EA5E9" fill-opacity="0.22"/>
+  <circle cx="260" cy="1320" r="340" fill="#22C55E" fill-opacity="0.16"/>
+  <circle cx="620" cy="760" r="430" fill="#1E293B"/>
+  <rect x="130" y="220" width="420" height="240" rx="28" fill="#E2E8F0" fill-opacity="0.08" stroke="#E2E8F0" stroke-opacity="0.18"/>
+  <rect x="178" y="286" width="182" height="18" rx="9" fill="#38BDF8"/>
+  <rect x="178" y="328" width="254" height="14" rx="7" fill="#E2E8F0" fill-opacity="0.72"/>
+  <rect x="178" y="362" width="218" height="14" rx="7" fill="#E2E8F0" fill-opacity="0.42"/>
+  <rect x="178" y="396" width="132" height="42" rx="21" fill="#22C55E" fill-opacity="0.85"/>
+  <rect x="560" y="520" width="500" height="620" rx="36" fill="#F8FAFC" fill-opacity="0.08" stroke="#F8FAFC" stroke-opacity="0.16"/>
+  <rect x="620" y="590" width="248" height="22" rx="11" fill="#F8FAFC" fill-opacity="0.8"/>
+  <rect x="620" y="640" width="340" height="14" rx="7" fill="#94A3B8"/>
+  <rect x="620" y="676" width="296" height="14" rx="7" fill="#64748B"/>
+  <rect x="620" y="760" width="380" height="112" rx="24" fill="#0EA5E9" fill-opacity="0.18" stroke="#38BDF8" stroke-opacity="0.46"/>
+  <rect x="652" y="802" width="148" height="16" rx="8" fill="#E0F2FE"/>
+  <rect x="652" y="836" width="278" height="12" rx="6" fill="#BAE6FD" fill-opacity="0.9"/>
+  <rect x="620" y="920" width="170" height="170" rx="28" fill="#22C55E" fill-opacity="0.16" stroke="#86EFAC" stroke-opacity="0.3"/>
+  <rect x="822" y="920" width="178" height="170" rx="28" fill="#F8FAFC" fill-opacity="0.08" stroke="#F8FAFC" stroke-opacity="0.16"/>
+  <path d="M705 978C705 1031.57 661.57 1075 608 1075C554.43 1075 511 1031.57 511 978C511 924.43 554.43 881 608 881C661.57 881 705 924.43 705 978Z" fill="#0EA5E9" fill-opacity="0.25"/>
+  <path d="M602 927L628 979L686 986L644 1026L655 1084L602 1056L549 1084L560 1026L518 986L576 979L602 927Z" fill="#E0F2FE"/>
+  <rect x="180" y="1040" width="320" height="320" rx="32" fill="#F8FAFC" fill-opacity="0.08" stroke="#F8FAFC" stroke-opacity="0.16"/>
+  <rect x="226" y="1098" width="174" height="16" rx="8" fill="#F8FAFC" fill-opacity="0.82"/>
+  <rect x="226" y="1140" width="214" height="14" rx="7" fill="#94A3B8"/>
+  <rect x="226" y="1180" width="228" height="14" rx="7" fill="#64748B"/>
+  <rect x="226" y="1236" width="128" height="40" rx="20" fill="#38BDF8" fill-opacity="0.82"/>
+</svg>

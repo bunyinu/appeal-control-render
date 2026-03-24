@@ -1,0 +1,55 @@
+{
+  "pages": {
+    "dashboard": {
+      "pageTitle": "Dashboard",
+      "overview": "Übersicht",
+      "loadingWidgets": "Widgets werden geladen...",
+      "loading": "Laden..."
+    },
+    "login": {
+      "pageTitle": "Anmeldung",
+
+      "sampleCredentialsAdmin": "Verwenden Sie {{email}} / {{password}}, um sich als Administrator anzumelden",
+      "sampleCredentialsUser":  "Verwenden Sie {{email}} / {{password}}, um sich als Benutzer anzumelden",
+
+      "form": {
+        "loginLabel":        "Login",
+        "loginHelp":         "Bitte geben Sie Ihren Login ein",
+        "passwordLabel":     "Passwort",
+        "passwordHelp":      "Bitte geben Sie Ihr Passwort ein",
+        "remember":          "Angemeldet bleiben",
+        "forgotPassword":    "Passwort vergessen?",
+        "loginButton":       "Anmelden",
+        "loading":           "Wird geladen...",
+        "noAccountYet":      "Noch kein Konto?",
+        "newAccount":        "Neues Konto"
+      },
+
+      "pexels": {
+        "photoCredit": "Foto von {{photographer}} auf Pexels",
+        "videoCredit": "Video von {{name}} auf Pexels",
+        "videoUnsupported": "Ihr Browser unterstützt das Video-Tag nicht."
+      },
+
+      "footer": {
+        "copyright": "© {{year}} {{title}}. Alle Rechte vorbehalten",
+        "privacy":   "Datenschutzrichtlinie"
+      }
+    }
+  },
+  "components": {
+    "widgetCreator": {
+      "title": "Diagramm oder Widget erstellen",
+      "helpText": "Beschreiben Sie Ihr neues Widget oder Diagramm in natürlicher Sprache. Zum Beispiel: \"Anzahl der Admin-Benutzer\" ODER \"rotes Diagramm mit der Anzahl geschlossener Verträge gruppiert nach Monat\"",
+      "settingsTitle": "Einstellungen für Widget Creator",
+      "settingsDescription": "Für welche Rolle zeigen wir Widgets an und erstellen sie?",
+      "doneButton": "Fertig",
+      "loading": "Laden..."
+    },
+    "search": {
+      "placeholder": "Suche",
+      "required": "Pflichtfeld",
+      "minLength": "Mindestlänge: {{count}} Zeichen"
+    }
+  }
+}

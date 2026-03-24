@@ -1,0 +1,4 @@
+# Ignore generated and runtime files
+node_modules/
+tmp/
+logs/

@@ -1,0 +1,13 @@
+{
+  "name": "app",
+  "version": "0.0.1",
+  "scripts": {
+    "check:backend": "cd ./backend && npm run lint",
+    "check:frontend": "cd ./frontend && npm run lint && npm run build",
+    "check:e2e": "cd ./frontend && npm run e2e",
+    "check:smoke": "node ./scripts/smoke-check.js",
+    "check:all": "npm run check:backend && npm run check:frontend",
+    "build:production": "cd ./frontend && yarn install && yarn run build && rm -rf ./node_modules && cd ../backend && yarn install",
+    "start:production": "cd ./backend && NODE_ENV=production yarn start"
+  }
+}

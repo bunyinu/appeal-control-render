@@ -1,0 +1,55 @@
+{
+  "pages": {
+    "dashboard": {
+      "pageTitle": "Tablero",
+      "overview": "Resumen",
+      "loadingWidgets": "Cargando widgets...",
+      "loading": "Cargando..."
+    },
+    "login": {
+      "pageTitle": "Inicio de sesión",
+
+      "sampleCredentialsAdmin": "Use {{email}} / {{password}} para iniciar sesión como Administrador",
+      "sampleCredentialsUser":  "Use {{email}} / {{password}} para iniciar sesión como Usuario",
+
+      "form": {
+        "loginLabel":        "Usuario",
+        "loginHelp":         "Introduzca su usuario",
+        "passwordLabel":     "Contraseña",
+        "passwordHelp":      "Introduzca su contraseña",
+        "remember":          "Recuérdame",
+        "forgotPassword":    "¿Olvidó su contraseña?",
+        "loginButton":       "Acceder",
+        "loading":           "Cargando...",
+        "noAccountYet":      "¿Aún no tiene una cuenta?",
+        "newAccount":        "Crear cuenta"
+      },
+
+      "pexels": {
+        "photoCredit":      "Foto de {{photographer}} en Pexels",
+        "videoCredit":      "Vídeo de {{name}} en Pexels",
+        "videoUnsupported": "Su navegador no admite la etiqueta de vídeo."
+      },
+
+      "footer": {
+        "copyright": "© {{year}} {{title}}. Todos los derechos reservados",
+        "privacy":   "Política de privacidad"
+      }
+    }
+  },
+  "components": {
+    "widgetCreator": {
+      "title": "Crear gráfico o widget",
+      "helpText": "Describe tu nuevo widget o gráfico en lenguaje natural. Por ejemplo: \"Número de usuarios administradores\" O \"gráfico rojo con el número de contratos cerrados agrupados por mes\"",
+      "settingsTitle": "Configuración del creador de widgets",
+      "settingsDescription": "¿Para qué rol estamos mostrando y creando widgets?",
+      "doneButton": "Listo",
+      "loading": "Cargando..."
+    },
+    "search": {
+      "placeholder": "Buscar",
+      "required": "Obligatorio",
+      "minLength": "Longitud mínima: {{count}} caracteres"
+    }
+  }
+}

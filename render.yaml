@@ -1,0 +1,92 @@
+databases:
+  - name: appeal-control-db
+    databaseName: appeal_control
+    user: appeal_control
+    plan: starter
+
+services:
+  - type: pserv
+    name: appeal-control-backend
+    runtime: node
+    rootDir: backend
+    plan: starter
+    buildCommand: npm install
+    startCommand: npm run start:render
+    healthCheckPath: /api/health/ready
+    autoDeploy: false
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        fromDatabase:
+          name: appeal-control-db
+          property: connectionString
+      - key: APP_URL
+        fromService:
+          name: appeal-control-frontend
+          type: web
+          envVarKey: RENDER_EXTERNAL_URL
+      - key: CORS_ORIGIN
+        fromService:
+          name: appeal-control-frontend
+          type: web
+          envVarKey: RENDER_EXTERNAL_URL
+      - key: BACKEND_INTERNAL_HOSTPORT
+        fromService:
+          name: appeal-control-backend
+          type: pserv
+          property: hostport
+      - key: SECRET_KEY
+        generateValue: true
+      - key: ENABLE_SWAGGER
+        value: "true"
+      - key: ENABLE_SQL_CONSOLE
+        value: "false"
+      - key: ENABLE_PEXELS_PROXY
+        value: "false"
+      - key: ENABLE_AI_PROXY
+        value: "false"
+      - key: DB_LOG_SQL
+        value: "false"
+      - key: DB_SSL
+        value: "false"
+      - key: PASSWORD_MIN_LENGTH
+        value: "12"
+      - key: EMAIL_FROM
+        value: "Appeal Control <no-reply@example.com>"
+      - key: EMAIL_HOST
+        sync: false
+      - key: EMAIL_PORT
+        value: "587"
+      - key: EMAIL_USER
+        sync: false
+      - key: EMAIL_PASS
+        sync: false
+      - key: EMAIL_CONFIGURATION_SET
+        sync: false
+
+  - type: web
+    name: appeal-control-frontend
+    runtime: node
+    rootDir: frontend
+    plan: starter
+    buildCommand: npm install && npm run build:render
+    startCommand: npm run start:render
+    healthCheckPath: /login/
+    autoDeploy: false
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NEXT_SERVER_API_PROXY_HOSTPORT
+        fromService:
+          name: appeal-control-backend
+          type: pserv
+          property: hostport
+      - key: NEXT_PUBLIC_ENABLE_DEMO_ACCOUNTS
+        value: "false"
+      - key: NEXT_PUBLIC_SHOW_API_DOCS
+        value: "true"
+      - key: NEXT_PUBLIC_APP_URL
+        sync: false
+      - key: NEXT_PUBLIC_TINY_KEY
+        sync: false

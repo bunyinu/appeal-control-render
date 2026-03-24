@@ -1,0 +1,375 @@
+.calendar-shell {
+  @apply relative;
+}
+
+.calendar-shell--expanded {
+  @apply fixed inset-4 z-50;
+}
+
+.calendar-shell__scrim {
+  @apply fixed inset-0 bg-slate-900/45 backdrop-blur-sm;
+}
+
+.calendar-shell__surface {
+  @apply relative flex min-h-[840px] flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white dark:border-dark-700 dark:bg-dark-900;
+}
+
+.calendar-shell--expanded .calendar-shell__surface {
+  height: calc(100vh - 2rem);
+  min-height: 0;
+}
+
+.calendar-shell__header {
+  @apply flex flex-col gap-4 border-b border-gray-200 px-4 py-4 dark:border-dark-700 xl:flex-row xl:items-start xl:justify-between;
+}
+
+.calendar-shell__header-copy {
+  @apply max-w-3xl;
+}
+
+.calendar-shell__header-actions {
+  @apply flex flex-col gap-3 sm:flex-row sm:items-stretch;
+}
+
+.calendar-shell__eyebrow {
+  @apply text-xs font-semibold uppercase tracking-[0.16em] text-gray-500 dark:text-gray-400;
+}
+
+.calendar-shell__title {
+  @apply mt-1 text-xl font-semibold text-slate-900 dark:text-slate-100;
+}
+
+.calendar-shell__description {
+  @apply mt-2 max-w-3xl text-sm leading-6 text-gray-500 dark:text-gray-400;
+}
+
+.calendar-shell__range-card {
+  @apply rounded-xl border border-gray-200 bg-slate-50 px-4 py-3 dark:border-dark-600 dark:bg-dark-800;
+}
+
+.calendar-shell__range-label {
+  @apply text-xs font-semibold uppercase tracking-[0.14em] text-gray-500 dark:text-gray-400;
+}
+
+.calendar-shell__range-value {
+  @apply mt-1 text-sm font-semibold text-slate-900 dark:text-slate-100;
+}
+
+.calendar-shell__expand-button {
+  @apply inline-flex items-center justify-center rounded-xl border border-slate-900 bg-slate-900 px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-slate-700 dark:border-slate-100 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-slate-300;
+}
+
+.calendar-shell__legend {
+  @apply flex flex-wrap gap-3 border-b border-gray-200 px-4 pb-4 dark:border-dark-700;
+}
+
+.calendar-shell__legend-chip {
+  @apply inline-flex items-center gap-2 rounded-full border border-gray-200 bg-slate-50 px-3 py-1.5 text-sm text-slate-600 dark:border-dark-600 dark:bg-dark-800 dark:text-slate-200;
+}
+
+.calendar-shell__legend-dot {
+  @apply h-2.5 w-2.5 rounded-full;
+}
+
+.calendar-shell__legend-dot--scheduled {
+  @apply bg-slate-500;
+}
+
+.calendar-shell__legend-dot--today {
+  @apply bg-blue-500;
+}
+
+.calendar-shell__legend-dot--overdue {
+  @apply bg-red-500;
+}
+
+.calendar-shell__legend-dot--blocked {
+  @apply bg-amber-500;
+}
+
+.calendar-shell__legend-value {
+  @apply text-base font-semibold text-slate-900 dark:text-slate-100;
+}
+
+.calendar-workspace {
+  @apply grid min-h-0 flex-1 xl:grid-cols-[minmax(0,1fr)_22rem];
+}
+
+.calendar-workspace__main {
+  @apply flex min-h-0 flex-col border-b border-gray-200 dark:border-dark-700 xl:border-b-0 xl:border-r;
+}
+
+.calendar-workspace__sidebar {
+  @apply flex min-h-0 flex-col gap-4 bg-slate-50/80 p-4 dark:bg-dark-800/70;
+}
+
+.calendar-shell__body {
+  @apply min-h-0 flex-1 p-4;
+}
+
+.calendar-panel {
+  @apply rounded-xl border border-gray-200 bg-white p-4 shadow-sm dark:border-dark-600 dark:bg-dark-900;
+}
+
+.calendar-panel__heading-row {
+  @apply flex items-start justify-between gap-3;
+}
+
+.calendar-panel__eyebrow {
+  @apply text-xs font-semibold uppercase tracking-[0.14em] text-gray-500 dark:text-gray-400;
+}
+
+.calendar-panel__title {
+  @apply mt-2 text-lg font-semibold leading-tight text-slate-900 dark:text-slate-100;
+}
+
+.calendar-panel__subheading {
+  @apply mt-1 text-sm font-medium text-slate-900 dark:text-slate-100;
+}
+
+.calendar-panel__description {
+  @apply mt-3 text-sm leading-6 text-gray-500 dark:text-gray-400;
+}
+
+.calendar-panel__meta-grid {
+  @apply mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2;
+}
+
+.calendar-panel__meta-card {
+  @apply rounded-xl border border-gray-200 bg-slate-50 px-3 py-3 dark:border-dark-600 dark:bg-dark-800;
+}
+
+.calendar-panel__meta-label {
+  @apply text-xs font-semibold uppercase tracking-[0.12em] text-gray-500 dark:text-gray-400;
+}
+
+.calendar-panel__meta-value {
+  @apply mt-1 text-sm font-medium text-slate-900 dark:text-slate-100;
+}
+
+.calendar-panel__count {
+  @apply inline-flex h-10 min-w-10 items-center justify-center rounded-full bg-slate-900 px-3 text-sm font-semibold text-white dark:bg-slate-100 dark:text-slate-900;
+}
+
+.calendar-panel__actions {
+  @apply mt-4 flex flex-wrap gap-2;
+}
+
+.calendar-panel__action {
+  @apply inline-flex items-center justify-center rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-50 dark:border-dark-600 dark:bg-dark-800 dark:text-slate-100 dark:hover:bg-dark-700;
+}
+
+.calendar-panel__action--primary {
+  @apply border-blue-600 bg-blue-600 text-white hover:bg-blue-500 dark:border-pavitra-blue dark:bg-pavitra-blue;
+}
+
+.calendar-panel__empty {
+  @apply mt-3 rounded-xl border border-dashed border-gray-300 px-3 py-4 text-sm text-gray-500 dark:border-dark-600 dark:text-gray-400;
+}
+
+.calendar-agenda {
+  @apply mt-4 space-y-2;
+}
+
+.calendar-agenda__item {
+  @apply w-full rounded-xl border border-gray-200 bg-slate-50 px-3 py-3 text-left transition-colors hover:border-slate-400 hover:bg-white dark:border-dark-600 dark:bg-dark-900 dark:hover:border-slate-400 dark:hover:bg-dark-800;
+}
+
+.calendar-agenda__item[data-active='true'] {
+  @apply border-slate-900 bg-white shadow-sm dark:border-slate-100 dark:bg-dark-800;
+}
+
+.calendar-agenda__item-row {
+  @apply flex items-start justify-between gap-3;
+}
+
+.calendar-agenda__item-title {
+  @apply min-w-0 flex-1 truncate text-sm font-semibold text-slate-900 dark:text-slate-100;
+}
+
+.calendar-agenda__item-time {
+  @apply text-xs font-semibold uppercase tracking-[0.12em] text-gray-500 dark:text-gray-400;
+}
+
+.calendar-agenda__item-meta {
+  @apply mt-1 text-xs leading-5 text-gray-500 dark:text-gray-400;
+}
+
+.calendar-agenda__more {
+  @apply pt-1 text-xs font-medium text-gray-500 dark:text-gray-400;
+}
+
+.calendar-toolbar,
+.rbc-toolbar {
+  @apply mb-4 flex flex-col gap-3 border-b border-gray-200 pb-4 dark:border-dark-700 xl:flex-row xl:items-center xl:justify-between;
+}
+
+.calendar-toolbar__nav-group,
+.calendar-toolbar__view-group {
+  @apply flex flex-wrap gap-2;
+}
+
+.calendar-toolbar__label {
+  @apply text-lg font-semibold text-slate-900 dark:text-slate-100;
+}
+
+.calendar-toolbar__button {
+  @apply inline-flex items-center rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-50 dark:border-dark-600 dark:bg-dark-800 dark:text-slate-100 dark:hover:bg-dark-700;
+}
+
+.calendar-toolbar__button--ghost {
+  @apply border-blue-200 bg-blue-50 text-blue-700 hover:bg-blue-100 dark:border-pavitra-blue/40 dark:bg-pavitra-blue/15 dark:text-sky-100;
+}
+
+.calendar-toolbar__button[data-active='true'] {
+  @apply border-blue-600 bg-blue-600 text-white dark:border-pavitra-blue dark:bg-pavitra-blue;
+}
+
+.rbc-calendar {
+  @apply text-slate-800 dark:text-slate-100;
+  height: 100%;
+  min-height: 640px;
+}
+
+.rbc-month-view,
+.rbc-time-view,
+.rbc-agenda-view {
+  @apply overflow-hidden rounded-xl border border-gray-200 dark:border-dark-700;
+}
+
+.rbc-header {
+  @apply border-b border-gray-200 bg-slate-50 px-3 py-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-500 dark:border-dark-700 dark:bg-dark-800 dark:text-slate-300;
+}
+
+.rbc-month-row + .rbc-month-row,
+.rbc-time-content,
+.rbc-time-header,
+.rbc-time-header-content,
+.rbc-time-content > * + * > * {
+  @apply border-gray-200 dark:border-dark-700;
+}
+
+.rbc-date-cell {
+  @apply px-2 pt-2 text-sm font-medium text-slate-500 dark:text-slate-300;
+}
+
+.rbc-day-bg {
+  @apply bg-white dark:bg-dark-900;
+}
+
+.rbc-day-bg.rbc-off-range-bg,
+.rbc-off-range-bg {
+  @apply bg-slate-50 dark:bg-dark-800 !important;
+}
+
+.calendar-day--weekend {
+  @apply bg-slate-50/70 dark:bg-dark-800/70;
+}
+
+.rbc-off-range {
+  @apply text-slate-300 dark:text-slate-500;
+}
+
+.rbc-current-time-indicator {
+  @apply h-0.5 bg-blue-500 !important;
+}
+
+.rbc-today {
+  @apply bg-blue-50/70 dark:bg-pavitra-blue/10 !important;
+}
+
+.rbc-day-bg.rbc-selected-cell {
+  @apply bg-slate-100 dark:bg-dark-700 !important;
+}
+
+.rbc-show-more {
+  @apply bg-transparent text-xs font-semibold text-blue-700 dark:text-sky-200 !important;
+}
+
+.rbc-event,
+.rbc-background-event {
+  @apply border-0 bg-transparent shadow-none !important;
+}
+
+.rbc-row-segment .rbc-event:not(.calendar-event) {
+  display: none;
+}
+
+.calendar-event {
+  @apply rounded-xl border shadow-sm ring-1 ring-transparent !important;
+}
+
+.calendar-event--selected {
+  @apply ring-2 ring-slate-900 dark:ring-slate-100 !important;
+}
+
+.calendar-event--default {
+  @apply border-blue-200 bg-blue-50 text-blue-900 dark:border-blue-900 dark:bg-blue-950/40 dark:text-blue-100 !important;
+}
+
+.calendar-event--high {
+  @apply border-slate-300 bg-slate-100 text-slate-900 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100 !important;
+}
+
+.calendar-event--urgent {
+  @apply border-red-200 bg-red-50 text-red-900 dark:border-red-900 dark:bg-red-950/40 dark:text-red-100 !important;
+}
+
+.calendar-event--blocked {
+  @apply border-amber-200 bg-amber-50 text-amber-900 dark:border-amber-900 dark:bg-amber-950/40 dark:text-amber-100 !important;
+}
+
+.calendar-event--done {
+  @apply border-emerald-200 bg-emerald-50 text-emerald-900 dark:border-emerald-900 dark:bg-emerald-950/40 dark:text-emerald-100 !important;
+}
+
+.calendar-event__content {
+  @apply flex items-start gap-2;
+}
+
+.calendar-event__body {
+  @apply min-w-0 flex-1;
+}
+
+.calendar-event__title-row {
+  @apply flex items-start justify-between gap-2;
+}
+
+.calendar-event__title {
+  @apply block truncate text-sm font-semibold leading-tight;
+}
+
+.calendar-event__time {
+  @apply text-[10px] font-semibold uppercase tracking-wide opacity-70;
+}
+
+.calendar-event__meta {
+  @apply mt-1 flex flex-wrap gap-1;
+}
+
+.calendar-event__badge {
+  @apply rounded-full border border-black/10 bg-white/50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide dark:border-white/20 dark:bg-white/10;
+}
+
+.calendar-event__context {
+  @apply mt-1 truncate text-[11px] opacity-80;
+}
+
+.calendar-event__actions {
+  @apply shrink-0 opacity-60 transition-opacity;
+}
+
+.calendar-event:hover .calendar-event__actions {
+  @apply opacity-100;
+}
+
+.rbc-month-view .calendar-event__meta,
+.rbc-month-view .calendar-event__context,
+.rbc-month-view .calendar-event__actions,
+.rbc-month-view .calendar-event__time {
+  @apply hidden;
+}
+
+.calendar-empty {
+  @apply mt-4 rounded-xl border border-dashed border-gray-300 px-4 py-6 text-center text-sm text-gray-500 dark:border-dark-600 dark:text-gray-400;
+}

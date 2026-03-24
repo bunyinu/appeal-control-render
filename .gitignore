@@ -1,0 +1,12 @@
+node_modules/
+*/node_modules/
+*/build/
+/.env
+*/.env
+*.env
+frontend/.next/
+frontend/playwright-report/
+frontend/test-results/
+*.log
+.codex-ops/
+.perm_test_*

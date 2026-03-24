@@ -1,0 +1,55 @@
+{
+  "pages": {
+    "dashboard": {
+      "pageTitle": "Tableau de bord",
+      "overview": "Vue d'ensemble",
+      "loadingWidgets": "Chargement des widgets...",
+      "loading": "Chargement..."
+    },
+    "login": {
+      "pageTitle": "Connexion",
+
+      "sampleCredentialsAdmin": "Utilisez {{email}} / {{password}} pour vous connecter en tant qu’administrateur",
+      "sampleCredentialsUser":  "Utilisez {{email}} / {{password}} pour vous connecter en tant qu’utilisateur",
+
+      "form": {
+        "loginLabel":        "Identifiant",
+        "loginHelp":         "Veuillez saisir votre identifiant",
+        "passwordLabel":     "Mot de passe",
+        "passwordHelp":      "Veuillez saisir votre mot de passe",
+        "remember":          "Se souvenir de moi",
+        "forgotPassword":    "Mot de passe oublié ?",
+        "loginButton":       "Se connecter",
+        "loading":           "Chargement…",
+        "noAccountYet":      "Vous n’avez pas encore de compte ?",
+        "newAccount":        "Créer un compte"
+      },
+
+      "pexels": {
+        "photoCredit":      "Photo de {{photographer}} sur Pexels",
+        "videoCredit":      "Vidéo de {{name}} sur Pexels",
+        "videoUnsupported": "Votre navigateur ne prend pas en charge la balise vidéo."
+      },
+
+      "footer": {
+        "copyright": "© {{year}} {{title}}. Tous droits réservés",
+        "privacy":   "Politique de confidentialité"
+      }
+    }
+  },
+  "components": {
+    "widgetCreator": {
+      "title": "Créer un graphique ou un widget",
+      "helpText": "Décrivez votre nouveau widget ou graphique en langage naturel. Par exemple : \"Nombre d'utilisateurs administrateurs\" OU \"graphique rouge avec le nombre de contrats clôturés regroupés par mois\"",
+      "settingsTitle": "Paramètres du créateur de widget",
+      "settingsDescription": "Pour quel rôle affichons-nous et créons-nous des widgets ?",
+      "doneButton": "Terminé",
+      "loading": "Chargement..."
+    },
+    "search": {
+      "placeholder": "Rechercher",
+      "required": "Champ requis",
+      "minLength": "Longueur minimale : {{count}} caractères"
+    }
+  }
+}

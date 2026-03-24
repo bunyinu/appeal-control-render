@@ -1,0 +1,305 @@
+# Cursor Rules - Group 1: Development Philosophy & Coding Conventions
+1. Overall Architecture & Structure:
+   - Enforce a clear separation of concerns between the backend and the frontend:
+     - **Backend**: Use Express for routing, Passport for authentication, and Swagger for API documentation. Organize code into modules such as routes, services, and helpers.
+       - **Example**:
+         - Routes: `src/routes/auth.js` for authentication routes.
+         - Services: `src/services/auth.js` for authentication logic.
+         - Helpers: `src/helpers/wrapAsync.js` for wrapping asynchronous functions.
+     - **Frontend**: Use Next.js with React and TypeScript. Structure components using functional components, hooks, and layouts.
+       - **Example**:
+         - Pages: `pages/index.tsx` for the main page.
+         - Components: `components/Header.tsx` for the header component.
+         - Layouts: `layouts/MainLayout.tsx` for common page layouts.
+   - Ensure that backend modules and frontend components are organized for reusability and maintainability:
+     - **Backend**: Separate business logic into services and use middleware for common tasks.
+     - **Frontend**: Use reusable components and hooks to manage state and lifecycle.
+
+2. Coding Style & Formatting:
+   - For the backend (JavaScript):
+       • Use ES6+ features (const/let, arrow functions) consistently.
+       • Follow Prettier and ESLint configurations (e.g., consistent 2-space indentation, semicolons, and single quotes).
+       • Maintain clear asynchronous patterns with helper wrappers (e.g., wrapAsync).
+         - **Example from auth.js**:
+           ```javascript
+           router.post('/signin/local', wrapAsync(async (req, res) => {
+             const payload = await AuthService.signin(req.body.email, req.body.password, req);
+             res.status(200).send(payload);
+           }));
+           ```
+      • Document API endpoints with inline Swagger comments to ensure API clarity and consistency.
+         - **Example**:
+           ```javascript
+           /**
+            * @swagger
+            * /api/auth/signin:
+            *   post:
+            *     summary: Sign in a user
+            *     responses:
+            *       200:
+            *         description: Successful login
+            */
+           ```
+   - For the frontend (TypeScript/React):
+       • Use functional components with strict typing and separation of concerns.
+         - **Example**:
+           ```typescript
+           const Button: React.FC<{ onClick: () => void }> = ({ onClick }) => (
+             <button onClick={onClick}>Click me</button>
+           );
+           ```
+       • Follow naming conventions: PascalCase for components and types/interfaces, camelCase for variables, hooks, and function names.
+         - **Example**:
+           ```typescript
+           const useCustomHook = () => {
+             const [state, setState] = useState(false);
+             return [state, setState];
+           };
+           ```
+       • Utilize hooks (useEffect, useState) to manage state and lifecycle in a clear and concise manner.
+         - **Example**:
+           ```typescript
+           useEffect(() => {
+             console.log('Component mounted');
+           }, []);
+           ```
+
+3. Code Quality & Best Practices:
+   - Ensure code modularity by splitting complex logic into smaller, testable units.
+     - **Example**: In `auth.js`, routes are separated from business logic, which is handled in `AuthService`.
+   - Write self-documenting code and add comments where the logic is non-trivial.
+     - **Example**: Use descriptive function and variable names in `auth.js`, and add comments for complex asynchronous operations.
+   - Embrace declarative programming and adhere to SOLID principles.
+     - **Example**: In service functions, ensure each function has a single responsibility and dependencies are injected rather than hardcoded.
+
+4. Consistency & Tools Integration:
+   - Leverage existing tools like Prettier and ESLint to automatically enforce style and formatting rules.
+     - **Example**: Use `.prettierrc` and `.eslintrc.cjs` for configuration in your project.
+   - Use TypeScript in the frontend to ensure type safety and catch errors early.
+     - **Example**: Define interfaces and types in your React components to enforce strict typing.
+   - Maintain uniformity in API design and error handling strategies.
+     - **Example**: Consistently use Passport for authentication and a common error handling middleware in `auth.js`.
+
+## Group 2 – Naming Conventions
+1. File Naming and Structure:
+   • Frontend:
+     - Page Files: Use lower-case filenames (e.g., index.tsx) as prescribed by Next.js conventions.
+       - **Example**: `pages/index.tsx`, `pages/about.tsx`
+     - Component Files: Use PascalCase for React component files (e.g., WebSiteHeader.tsx, NavBar.tsx).
+       - **Example**: `components/Header.tsx`, `components/Footer.tsx`
+     - Directories: Use clear, descriptive names (e.g., 'pages', 'components', 'WebPageComponents').
+       - **Example**: `src/pages`, `src/components`
+   • Backend:
+     - Use lower-case filenames for modules (e.g., index.js, auth.js, projects.js).
+       - **Example**: `routes/auth.js`, `services/user.js`
+     - When needed, use hyphenation for clarity, but maintain consistency.
+       - **Example**: `helpers/wrap-async.js`
+
+2. Component and Module Naming:
+   • Frontend:
+     - React Components: Define components in PascalCase.
+     - TypeScript Interfaces/Types: Use PascalCase (e.g., WebSiteHeaderProps).
+   • Backend:
+     - Classes (if any) and constructors should be in PascalCase; most helper functions and modules use camelCase.
+
+3. Variable, Function, and Hook Naming:
+   • Use camelCase for variables and function names in both frontend and backend.
+     - **Example**:
+       ```javascript
+       const userName = 'John Doe';
+       function handleLogin() { ... }
+       ```
+   • Custom Hooks: Prefix with 'use' (e.g., useAuth, useForm).
+     - **Example**:
+       ```typescript
+       const useAuth = () => {
+         const [isAuthenticated, setIsAuthenticated] = useState(false);
+         return { isAuthenticated, setIsAuthenticated };
+       };
+       ```
+
+4. Consistency and Readability:
+   • Maintain uniform naming across the project to ensure clarity and ease of maintenance.
+     - **Example**: Use consistent naming conventions for variables, functions, and components, such as camelCase for variables and functions, and PascalCase for components.
+     - **Example**: In `auth.js`, ensure that all function names clearly describe their purpose, such as `handleLogin` or `validateUserInput`.
+
+## Group 3 – Frontend & React Best Practices
+1. Use of Functional Components & TypeScript:
+   • Build all components as functional components.
+     - **Example**:
+       ```typescript
+       const Header: React.FC = () => {
+         return <header>Header Content</header>;
+       };
+       ```
+   • Leverage TypeScript for static type checking and enforce strict prop and state types.
+     - **Example**:
+       ```typescript
+       interface ButtonProps {
+         onClick: () => void;
+       }
+       const Button: React.FC<ButtonProps> = ({ onClick }) => (
+         <button onClick={onClick}>Click me</button>
+       );
+       ```
+
+2. Effective Use of React Hooks:
+   • Utilize useState and useEffect appropriately with proper dependency arrays.
+     - **Example**:
+       ```typescript
+       const [count, setCount] = useState(0);
+       useEffect(() => {
+         console.log('Component mounted');
+       }, []);
+       ```
+   • Create custom hooks to encapsulate shared logic (e.g., useAppSelector).
+     - **Example**:
+       ```typescript
+       const useAuth = () => {
+         const [isAuthenticated, setIsAuthenticated] = useState(false);
+         return { isAuthenticated, setIsAuthenticated };
+       };
+       ```
+
+3. Component Composition & Separation of Concerns:
+   • Separate presentational (stateless) components from container components managing logic.
+     - **Example**: Use `LayoutGuest` to encapsulate common page structures.
+
+4. Code Quality & Readability:
+   • Maintain consistent formatting and adhere to Prettier and ESLint rules.
+   • Use descriptive names for variables, functions, and components.
+   • Document non-trivial logic with inline comments and consider implementing error boundaries where needed.
+   • New code must adhere to these conventions to avoid ambiguity.
+   • Use descriptive names that reflect the purpose and domain, avoiding abbreviations unless standard in the project.
+
+## Group 4 – Backend & API Guidelines
+1. API Endpoint Design & Documentation:
+   • Follow RESTful naming conventions; all route handlers should be named clearly and consistently.
+     - **Example**: Use verbs like `GET`, `POST`, `PUT`, `DELETE` to define actions, e.g., `GET /api/auth/me` to retrieve user info.
+   • Document endpoints with Swagger annotations to provide descriptions, expected request bodies, and response codes.
+     - **Example**:
+       ```javascript
+       /**
+        * @swagger
+        * /api/auth/signin:
+        *   post:
+        *     summary: Sign in a user
+        *     requestBody:
+        *       description: User credentials
+        *       content:
+        *         application/json:
+        *           schema:
+        *             $ref: "#/components/schemas/Auth"
+        *     responses:
+        *       200:
+        *         description: Successful login
+        *       400:
+        *         description: Invalid username/password supplied
+        */
+       ```
+   • Examples (for Auth endpoints):
+       - POST /api/auth/signin/local
+           • Description: Logs the user into the system.
+           • Request Body (application/json):
+               { "email": "admin@flatlogic.com", "password": "password" }
+           • Responses:
+               - 200: Successful login (returns token and user data).
+               - 400: Invalid username/password supplied.
+       - GET /api/auth/me
+           • Description: Retrieves current authorized user information.
+           • Secured via Passport JWT; uses req.currentUser.
+           • Responses:
+               - 200: Returns current user info.
+               - 400: Invalid credentials or missing user data.
+       - POST /api/auth/signup
+           • Description: Registers a new user.
+           • Request Body (application/json):
+               { "email": "admin@flatlogic.com", "password": "password" }
+           • Responses:
+               - 200: New user signed up successfully.
+               - 400: Invalid input supplied.
+               - 500: Server error.
+
+## Group 5 – Testing, Quality Assurance & Error Handling
+1. Testing Guidelines:
+   • Write unit tests for critical backend and frontend components using frameworks such as Jest, React Testing Library, and Mocha/Chai.
+     - **Example**:
+       ```javascript
+       test('should return user data', async () => {
+         const user = await getUserData();
+         expect(user).toHaveProperty('email');
+       });
+       ```
+   • Practice test-driven development and maintain high test coverage.
+   • Regularly update tests following changes in business logic.
+
+2. Quality Assurance:
+   • Enforce code quality with ESLint, Prettier, and static analysis tools.
+   • Integrate continuous testing workflows (CI/CD) to catch issues early.
+     - **Example**: Use GitHub Actions for automated testing and deployment.
+   • Ensure documentation is kept up-to-date with the implemented code.
+
+3. Error Handling:
+   • Back-end:
+       - Wrap asynchronous route handlers with a helper (e.g., wrapAsync) to capture errors.
+         - **Example**:
+           ```javascript
+           router.post('/signin', wrapAsync(async (req, res) => {
+             const user = await AuthService.signin(req.body);
+             res.send(user);
+           }));
+           ```
+       - Use centralized error handling middleware (e.g., commonErrorHandler) for uniform error responses.
+   • Front-end:
+       - Implement error boundaries in React to gracefully handle runtime errors.
+       - Display user-friendly error messages and log errors for further analysis.
+
+2. Authentication & Security:
+   • Protect endpoints by using Passport.js with JWT (e.g., passport.authenticate('jwt', { session: false })).
+     - **Example**:
+       ```javascript
+       router.get('/profile', passport.authenticate('jwt', { session: false }), (req, res) => {
+         res.send(req.user);
+       });
+       ```
+   • Ensure that secure routes check for existence of req.currentUser. If absent, return a ForbiddenError.
+
+3. Consistent Error Handling & Middleware Usage:
+   • Wrap asynchronous route handlers with helpers like wrapAsync for error propagation.
+   • Use centralized error handling middleware (e.g., commonErrorHandler) to capture and format errors uniformly.
+
+4. Modular Code Organization:
+   • Organize backend code into separate files for routes, services, and database access (e.g., auth.js, projects.js, tasks.js).
+   • Use descriptive, lowercase filenames for modules and routes.
+
+5. Endpoint Security Best Practices:
+   • Validate input data and sanitize requests where necessary.
+   • Restrict sensitive operations to authenticated users with proper role-based permissions.
+
+
+────────────────────────────────────────
+Group 6 – Accessibility, UI, and Styling Guidelines (Updated)
+────────────────────────────────────────
+1. Sidebar Styling:
+   • The sidebar is implemented in the authenticated layout via the AsideMenu component, with the actual element defined in AsideMenuLayer (located at frontend/src/components/AsideMenuLayer.tsx) as an <aside> element with id="asideMenu".
+     - **Example**:
+       ```css
+       #asideMenu {
+           background-color: #F8F4E1 !important;
+       }
+       ```
+   • When modifying sidebar styles, target #asideMenu and its child elements rather than generic selectors (e.g., avoid .app-sidebar) to ensure that the changes affect the actual rendered sidebar.
+   • Remove or override any conflicting background utilities (such as an unwanted bg-white) so our desired background color (#F8F4E1) is fully visible. Use a highly specific selector if necessary.
+   • Adjust spacing (padding/margins) at both the container (#asideMenu) and the individual menu item level to maintain a consistent, compact design.
+
+2. General Project Styling and Tailwind CSS Usage:
+   • The application leverages Tailwind CSS extensively, with core styling defined in _theme.css using the @apply directive. Any new modifications should follow this pattern to ensure consistency.
+     - **Example**:
+       ```css
+       .btn {
+           @apply bg-blue-500 text-white;
+       }
+       ```
+   • The themed blocks (like .theme-pink and .theme-green) standardize the UI's appearance. When applying custom overrides, ensure they integrate cleanly into these structures and avoid conflicts or circular dependency errors (e.g., issues when redefining utilities such as text-blue-600).
+   • Adjustments via Tailwind CSS generally require modifying class names in the components and ensuring that global overrides are applied in the correct order. Consistent use of design tokens and custom color codes (e.g., #F8F4E1) throughout the app is crucial to a cohesive design.
+   • Specificity is key. If a change isn't visually reflected as expected, inspect the rendered HTML to identify which classes are taking precedence.

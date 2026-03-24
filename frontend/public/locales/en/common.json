@@ -1,0 +1,52 @@
+{
+  "pages": {
+    "dashboard": {
+      "pageTitle": "Dashboard",
+      "overview": "Overview",
+      "loadingWidgets": "Loading widgets...",
+      "loading": "Loading..."
+    },
+    "login": {
+      "pageTitle": "Login",
+
+      "form": {
+        "loginLabel":        "Login",
+        "loginHelp":         "Please enter your login",
+        "passwordLabel":     "Password",
+        "passwordHelp":      "Please enter your password",
+        "remember":          "Remember",
+        "forgotPassword":    "Forgot password?",
+        "loginButton":       "Login",
+        "loading":           "Loading...",
+        "noAccountYet":      "Don’t have an account yet?",
+        "newAccount":        "New Account"
+      },
+
+      "pexels": {
+        "photoCredit": "Photo by {{photographer}} on Pexels",
+        "videoCredit": "Video by {{name}} on Pexels",
+        "videoUnsupported": "Your browser does not support the video tag."
+      },
+
+      "footer": {
+        "copyright": "© {{year}} {{title}}. All rights reserved",
+        "privacy":   "Privacy Policy"
+      }
+    }
+  },
+  "components": {
+    "widgetCreator": {
+      "title": "Create Chart or Widget",
+      "helpText": "Describe your new widget or chart in natural language. For example: \"Number of admin users\" OR \"red chart with number of closed contracts grouped by month\"",
+      "settingsTitle": "Widget Creator Settings",
+      "settingsDescription": "What role are we showing and creating widgets for?",
+      "doneButton": "Done",
+      "loading": "Loading..."
+    },
+    "search": {
+      "placeholder": "Search",
+      "required": "Required",
+      "minLength": "Minimum length: {{count}} characters"
+    }
+  }
+}
