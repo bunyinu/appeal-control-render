@@ -2,7 +2,7 @@ databases:
   - name: appeal-control-db
     databaseName: appeal_control
     user: appeal_control
-    plan: starter
+    plan: basic_256mb
 
 services:
   - type: pserv
@@ -10,7 +10,7 @@ services:
     runtime: node
     rootDir: backend
     plan: starter
-    buildCommand: npm install
+    buildCommand: npm ci
     startCommand: npm run start:render
     healthCheckPath: /api/health/ready
     autoDeploy: false
@@ -70,7 +70,7 @@ services:
     runtime: node
     rootDir: frontend
     plan: starter
-    buildCommand: npm install && npm run build:render
+    buildCommand: npm ci && npm run build:render
     startCommand: npm run start:render
     healthCheckPath: /login/
     autoDeploy: false
