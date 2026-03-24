@@ -12,7 +12,7 @@
     "lint": "npm run normalize:generated && eslint . --ext .js",
     "lint:fix": "npm run normalize:generated && eslint . --ext .js --fix",
     "db:migrate": "sequelize-cli db:migrate",
-    "db:seed:core": "sequelize-cli db:seed --seed 20200430130760-user-roles.js",
+    "db:seed:core": "node ./scripts/seed-core-access.js",
     "db:seed": "sequelize-cli db:seed:all",
     "db:drop": "sequelize-cli db:drop",
     "db:create": "sequelize-cli db:create",
