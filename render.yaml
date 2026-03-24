@@ -70,7 +70,7 @@ services:
     runtime: node
     rootDir: frontend
     plan: starter
-    buildCommand: npm ci && npm run build:render
+    buildCommand: npm ci --include=dev && npm run build:render
     startCommand: npm run start:render
     healthCheckPath: /login/
     autoDeploy: false
